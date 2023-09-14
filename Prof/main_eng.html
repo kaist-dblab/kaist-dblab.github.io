@@ -1252,21 +1252,4 @@ comments for this page to <A HREF="mailto:kywhang@gmail.com">webmaster@dblab.kai
 </TABLE>
 </BODY>
 </HTML>
-<?
-// Counter
-$fp = fopen("counter.txt", "r"); 
-$counter = fgets($fp);
-$counter = $counter + 1;  
-$fp = fopen("counter.txt", "w");
-fputs($fp,"$counter");
-fclose($fp);
 
-// Log
-$fp1 = fopen("access_ip.txt", "a"); 
-$ip = "IP: ".$_SERVER[REMOTE_ADDR].", LANGUAGE TYPE: ".$_SERVER[HTTP_ACCEPT_LANGUAGE].", ";
-//$ip = $_SERVER[REMOTE_ADDR]."\n";
-fputs($fp1, $ip);
-$today = date("M j, Y\n"); 
-fputs ($fp1, $today);
-fclose($fp1);
-?>
